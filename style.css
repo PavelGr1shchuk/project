@@ -4,8 +4,18 @@
     margin: 0px;
 }
 
+html,
+body {
+    font-family: 'Rubik', sans-serif;
+    font-style: normal;
+}
+
 a {
     text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
 }
 
 ul {
@@ -15,6 +25,12 @@ ul {
 button {
     border: none;
     background-color: transparent;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+button:hover {
+    transform: translateY(-5px);
 }
 
 .title {
@@ -25,20 +41,36 @@ button {
 }
 
 .text {
-    font-weight: 400;
-    font-size: 16px;
-    line-height: 22px;
     color: #95a1bb;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 22px;
 }
 
-html,
-body {
-    font-family: 'Rubik', sans-serif;
+.container {
+    height: 100%;
+    width: 100%;
+    max-width: 1170px;
+    padding: 0 15px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid red;
 }
 
 .header {
     background-color: #0A61f7;
     padding: 14px 0;
+}
+
+.header-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.menu {
+    display: flex;
+    gap: 24px;
 }
 
 .menu-link {
@@ -49,6 +81,18 @@ body {
     letter-spacing: 1.4 px;
     text-transform: uppercase;
     color: #fff;
+}
+
+.main-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 800px;
+}
+
+.main .text {
+    margin-bottom: 40px;
+    max-width: 380px;
 }
 
 .main-title {
@@ -72,16 +116,26 @@ body {
     color: #fff;
 }
 
+.main-img {
+    align-self: flex-end;
+}
+
 .rates-section {
     background: #f9fafc;
     padding: 100px 0;
 }
 
-.rates-section.title {
+.rates-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.rates-section .title {
     margin-bottom: 20px;
 }
 
-.rates-section.text {
+.rates-section .text {
     margin-bottom: 40px;
 }
 
@@ -113,6 +167,10 @@ td {
     color: #363940;
 }
 
+.table-subtitle .gray {
+    color: #95a1bb;
+}
+
 .table-link {
     color: #0a61f7;
 }
@@ -130,12 +188,7 @@ td {
     color: #0a61f7;
 }
 
-.table-subtitle.gray {
-    color: #95a1bb;
-}
-
-.table-button.active {
-
+.table-button .active {
     background: #0a61f7;
     color: #fff;
 }
@@ -148,11 +201,16 @@ td {
     padding: 100px 0;
 }
 
-.create-account-section.title {
+.account-wrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.create-account-section .title {
     margin-bottom: 50px;
 }
 
-.create-account-section.text {
+.create-account-section .text {
     margin-bottom: 40px;
     max-width: 500px;
 }
@@ -164,6 +222,14 @@ td {
     color: #363940;
 }
 
+form {
+    width: 100%;
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 input, select, fieldset, textarea {
     border-radius: 4px;
     border: 1px solid #95a1bb;
@@ -171,9 +237,9 @@ input, select, fieldset, textarea {
 }
 
 input, select, fieldset, textarea, label, legend, input::placeholder, select::placeholder, textarea::placeholder {
-    color: #95a1bb;
+    color: #95A1BB;
     font-size: 16px;
-    font-weight: 400;
+    font-weight: 400; 
     line-height: 22.4px;
     font-family: inherit;
 }
@@ -185,6 +251,23 @@ input[type="text"] {
 input[type="email"], input[type="password"], input[type="date"] select {
     width: 230px;
     height: 50px;
+    flex-grow: 1;
+}
+
+input[type="radio"], input[type="checkbox"], input[type="date"], select {
+    cursor: pointer;
+}
+
+.stack, 
+fieldset {
+    display: flex;
+    column-gap: 30px;
+}
+
+.fields-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
 fieldset {
@@ -198,7 +281,7 @@ textarea {
     resize: none;
 }
 
-form.button {
+form .button {
     width: 100%;
 }
 
@@ -211,7 +294,7 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     background: url(./assets/images/Calendar.svg) no-repeat;
 }
 
-.footer {
+footer {
     padding: 20px 0;
     text-align: center;
     background: #0a61f7;
